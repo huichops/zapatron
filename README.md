@@ -19,4 +19,8 @@
 
   `rackup ` 
 
+4. Por default inicia en el puerto 4567 entonces para entrar al servidor nos
+   vamos a localhost:4567. El puerto se puede cambiar usando
+
+  `rackup -p <puerto>`
 
