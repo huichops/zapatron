@@ -1,0 +1,10 @@
+%clearfix {
+    margin-bottom: 30px;
+
+    &:after {
+        content:"";
+        display:table;
+        clear:both;
+    }
+}
+

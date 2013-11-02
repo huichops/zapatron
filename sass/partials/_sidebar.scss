@@ -1,0 +1,19 @@
+.sidebar {
+    position: fixed;
+    float: left;
+    background-color: $bgColor2;
+    width: 3%;
+    height: 100%;
+    @include box-sizing(content-box);
+    overflow: hidden;
+    @include transition(width 0.2s linear);
+    &:hover {
+        width: 8%;
+    }
+}
+
+.content {
+    padding-left: 10%;
+    float: left;
+    width: 90%;
+}

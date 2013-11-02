@@ -1,5 +1,7 @@
 class WebController < AppController
+
   get '/' do
-    p "test"
+    erb :clientes
   end
+
 end

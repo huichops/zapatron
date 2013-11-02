@@ -1,0 +1,9 @@
+* {
+    @include box-sizing(border-box);
+}
+
+body {
+
+    @extend %clearfix;
+}
+

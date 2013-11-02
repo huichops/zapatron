@@ -1,10 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Hola, Zapatron!</title>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="/css/style.css">
+<title>Hola, Zapatron!</title>
 </head>
 <body>
-    <h1>Hola, Zapatron!</h1>
+
+<div class="sidebar">
+<nav>
+    <ul>
+        <li>Clientes</li>
+        <li>Pedidos</li>
+        <li>Modelos</li>
+    </ul>
+</nav>
+</div>
+<div class="content">
+    <header>
+        <h1>Zapatron</h1>
+    </header>
+
+    <%= yield %>
+
+    <footer></footer>
+</div>
+
 </body>
 </html>

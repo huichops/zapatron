@@ -1,2 +1,10 @@
-@import "partials/normalize"
+@import "compass/css3";
+
+@import "modules/flat-colors.scss";
+@import "modules/variables.scss";
+@import "modules/utility.scss";
+
+@import "partials/base";
+@import "partials/normalize";
+@import "partials/sidebar";
 
