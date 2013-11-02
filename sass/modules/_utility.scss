@@ -1,3 +1,18 @@
+@mixin column( $n ) {
+    width: 100% / $columns * $n;
+    float: left;
+    position: relative;
+    min-height: 1px;
+    padding: $columnPadding 0px;
+}
+
+%row {
+    @extend %clearfix;
+    margin: 0px auto;
+    clear: both;
+    @extend %noOverflow;
+}
+
 %clearfix {
 
     &:after {

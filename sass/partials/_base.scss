@@ -2,13 +2,37 @@
     @include box-sizing(border-box);
 }
 
-body {
 
+body {
+    font-family: Helvetica, Sans;
+    color: $textColor;
     @extend %clearfix;
+    font-size: 100%;
 }
 
 html, body {
     @extend %noOverflow;
     height: 100%;
+}
+
+header {
+    @extend %row;
+    padding: 0;
+    margin-bottom: 5px;
+}
+
+h1 {
+    font-size: 2.3em;
+    font-weight: bold;
+}
+
+h2 {
+    color: $subHeading;
+    font-size: 1.8em;
+}
+
+h3 {
+    color: $subHeading;
+    font-size: 1.5em;
 }
 
