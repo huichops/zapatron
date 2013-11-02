@@ -7,3 +7,8 @@ body {
     @extend %clearfix;
 }
 
+html, body {
+    @extend %noOverflow;
+    height: 100%;
+}
+
