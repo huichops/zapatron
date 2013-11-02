@@ -22,7 +22,9 @@
     margin-left: 30px;
     width: 95%;
     background-color: $flat-turquoise;
-
+    height: 100%;
+    max-height: 100%;
+    overflow: auto;
 }
 
 .sidebar,
@@ -32,7 +34,7 @@
 }
 
 .container {
-    height: 100%;
+    max-height: 100%;
     @extend %row;
 }
 
@@ -44,8 +46,9 @@
 
 .row {
     @extend %row;
+    height: 90%;
+    max-height: 95%;
 }
-
 /* Tabs */
 
 
@@ -56,23 +59,26 @@
         padding: 0 10px;
         border: 1px solid white;
     }
+    margin: 0px;
+    padding: 0px;
 }
 
 section {
     color: black;
-    @include column(4);
+    @include column(6);
     background-color: $flat-clouds;
     @include border-radius(5px);
-    height: 80%;
-    overflow: auto;
+    padding: 10px 20px;
+    height: 95%;
 }
 
 %pedido {
-    padding: 20px;
+    padding: 0px 10px 10px;
     background-color: white;
-    color: black;
+    color: $subHeading;
     margin: 10px 0px;
     @extend %row;
+    @include border-radius(3px);
 
 }
 
@@ -88,12 +94,17 @@ section {
 
 .elementoPedido {
     text-align: center;
-    font-size: 0.9em;
-    @include column(1.5);
+    font-size: 0.8em;
+    @include column(2);
     padding: 5px;
     background-color: $flat-clouds;
     @include border-radius(3px);
     color: #AAA;
     line-height: 1.5em;
+}
+
+.listaPedidos {
+    overflow: auto;
+    height: 90%;
 }
 
