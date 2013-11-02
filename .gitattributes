@@ -9,6 +9,14 @@
 *.js     text
 *.sql    text
 Gemfile.lock -merge
+.sass-cache
+
+#Vim Files
+*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
 
 # Custom for Visual Studio
 *.cs     diff=csharp

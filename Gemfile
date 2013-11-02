@@ -8,3 +8,6 @@ gem 'rack-livereload'
 gem 'guard'
 gem 'guard-livereload'
 gem 'guard-sass'
+gem 'sass'
+gem 'compass'
+
