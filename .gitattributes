@@ -13,6 +13,7 @@ Gemfile.lock -merge
 
 #Vim Files
 *.s[a-w][a-z]
+.swo
 *.un~
 Session.vim
 .netrwhist
