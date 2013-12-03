@@ -10,4 +10,5 @@ gem 'guard-livereload'
 gem 'guard-sass'
 gem 'sass'
 gem 'compass'
+gem 'datamapper'
 

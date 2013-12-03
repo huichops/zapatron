@@ -1,0 +1,15 @@
+<section>
+  <form action="/clientes" method="post">
+    <input id="nombre" type="text" name="nombre">
+    <input id="apellido" type="text" name="apellido">
+    <input id="telefono" type="text" name="telefono">
+    <input type="submit" value="Guardar">
+  </form>
+  <% @clients.each do |client| %>
+    <p><%= client.nombre %></p>
+    <p><%= client.apellido %></p>
+    <p><%= client.telefono %></p>
+  <% end %>
+</section>
+
+

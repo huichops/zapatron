@@ -2,6 +2,6 @@ require './controllers/AppController'
 
 class WebController < AppController
   get '/' do
-    erb :clientes
+    erb :test
   end
 end
