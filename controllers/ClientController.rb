@@ -13,7 +13,7 @@ class ClientController < AppController
     c.apellido = params[:apellido]
     c.telefono = params[:telefono]
     c.save
-	redirect '/clients'
+	redirect '/clientes'
   end
 end
 
