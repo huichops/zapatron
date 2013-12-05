@@ -1,0 +1,8 @@
+<% if @color %>
+  <form action="/colors/<%= @color.id %>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <input type="text" name="nombre" value="<%= @color.nombre %>">
+    <input type="submit" value="Guardar">
+  </form>
+<% end %>
+
