@@ -1,0 +1,10 @@
+<% if @order %>
+    <p>deseas eliminar el pedido <strong><%= @order.name %></strong>?</p>
+    <form action = "/orders/><%= @order.id %>" method = "post">
+        <input type = "hidden" name = "_method" value = "delete">
+        <input type = "submit" value = "Si, a la vega">
+        <a href = "/<%= @order.id %>">"Dice mi mama que siempre no"</a>
+    </form>
+<% else %>
+    <p>No existe el pedido no inventes</p>
+<% end %>
