@@ -15,6 +15,6 @@ map('/') { run WebController }
 map('/clientes') { run ClientController }
 map('/colors') { run ColorController }
 map('/orders') { run OrderController }
-map('/batches') { run BatchController }
+#map('/batches') { run BatchController }
 
 
