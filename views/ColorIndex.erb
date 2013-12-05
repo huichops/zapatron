@@ -6,7 +6,9 @@
 <ul>
 <% if @colors.any? %>
   <% @colors.each do |color| %>
-    <li><%= color.nombre %></li>
+    <li><%= color.nombre %>
+  <a href="/colors/<%= color.id %>">editar</a>
+</li>
   <% end %>
 <% end %>
 </ul>

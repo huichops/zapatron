@@ -25,10 +25,14 @@ class ColorController < AppController
     redirect '/colors'
   end
 
+  get '/:id/delete' do
+    @color = Color.get params[:id]
+    erb :ColorDelete
+  end
+
   delete '/:id' do
-    c = Color.new
-    c.nombre = params[:nombre]
-    c.save
+    c = Color.get params[:id]
+    c.destroy
     redirect '/colors'
   end
 end

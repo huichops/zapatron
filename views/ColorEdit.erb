@@ -4,5 +4,8 @@
     <input type="text" name="nombre" value="<%= @color.nombre %>">
     <input type="submit" value="Guardar">
   </form>
+  <a href="/colors/<%= @color.id %>/delete">Eliminar</a>
+<% else %>
+  <p>No existe el color</p>
 <% end %>
 
