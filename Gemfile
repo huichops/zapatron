@@ -10,5 +10,7 @@ gem 'guard-livereload'
 gem 'guard-sass'
 gem 'sass'
 gem 'compass'
-gem 'datamapper'
+gem 'dm-mysql-adapter'
+  gem 'sqlite3'
+gem 'data_mapper'
 
