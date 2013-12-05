@@ -3,7 +3,7 @@ require './controllers/AppController'
 class ColorController < AppController
   get '/' do
     @colors = Color.all :order => :id.desc
-    erb :clients
+    erb :ColorsIndex
   end
 
   post '/' do

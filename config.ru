@@ -1,15 +1,20 @@
 require 'sinatra/base'
-require './models/Client'
-require './controllers/WebController'
-require './controllers/ClientController'
 
-#Dir['./controllers/*.rb'].each do
-#    |file| require file 
-#    p file
-#end
+Dir['./models/*.rb'].each do |file| 
+   require file 
+end
+
+Dir['./controllers/*.rb'].each do |file| 
+   require file 
+end
 
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/development.db")
+DataMapper.auto_upgrade!
 
 map('/') { run WebController }
 map('/clientes') { run ClientController }
+map('/colors') { run ColorController }
+map('/orders') { run OrderController }
+map('/batches') { run BatchController }
+
 

@@ -1,9 +1,13 @@
 <form action="/colors" method="post">
-  <input id="nombre" type="text" name="text" />
+  <input id="nombre" type="text" name="nombre" />
+    <input type="submit" value="Guardar">
 </form>
+
 <ul>
-<% @colors.each do |color| %>
-  <li><%= color.nombre %></li>
+<% if @colors.any? %>
+  <% @colors.each do |color| %>
+    <li><%= color.nombre %></li>
+  <% end %>
 <% end %>
 </ul>
 
