@@ -1,0 +1,8 @@
+<form action = "/orders" method = "post">
+    <input id = "nombre" type = "text"  name = "text" />
+</form>
+<ul>
+    <%  @orders.each do |order| %>
+        <li><%= order.nombre %></li>
+    <% end %>
+</ul>
