@@ -1,12 +1,13 @@
-requiere './controllers/AppController'
+require './controllers/AppController'
 
 class OrderController <AppController
     get '/' do
-        @orders = Order.all :order=> :id:desc
+        @orders = Order.all :order=> :id.desc
         @title = 'Pedido'
         erb :orders
     end
 
     post '/' do
     end
-end|
+end
+
