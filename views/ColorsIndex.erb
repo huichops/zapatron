@@ -1,0 +1,9 @@
+<form action="/colors" method="post">
+  <input id="nombre" type="text" name="text" />
+</form>
+<ul>
+<% @colors.each do |color| %>
+  <li><%= color.nombre %></li>
+<% end %>
+</ul>
+
