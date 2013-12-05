@@ -1,0 +1,10 @@
+<% if @order %>
+        <form action = "/orders/<%= @order.id %>" method = "post">
+        <input type="hidden" name="_method" value="put">
+        <input type="text" name="nombre" value="<%= @order.nombre %>">
+        <input type="submit" value="Guardar">
+  </form>
+    <a href="/colors/<%= @order.id %>/delete">Eliminar</a>
+<% else %>
+        <p>Orden inexistente</p>
+<% end %>
