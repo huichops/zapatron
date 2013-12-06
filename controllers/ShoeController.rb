@@ -16,7 +16,7 @@ class ShoeController < AppController
 end
 
 get '/:id' do
-    @shoes = Shoe.get params[:id]
+    @shoe = Shoe.get params[:id]
     @title = 'Editar Modelo'
     erb :ShoeEdit
   end
@@ -29,7 +29,7 @@ get '/:id' do
   end
 
   get '/:id/delete' do
-    @shoes = Shoe.get params[:id]
+    @shoe = Shoe.get params[:id]
     @title = 'Eliminar modelo'
     erb :ShoeDelete
   end
