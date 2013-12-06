@@ -4,6 +4,6 @@ require 'dm-migrations'
 class Shoe
   include DataMapper::Resource
   property :id, Serial
-  property :modelo, String
+  property :model, String
   DataMapper.finalize
 end
