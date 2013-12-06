@@ -1,15 +1,36 @@
-<form action="/colors" method="post">
-  <input id="nombre" type="text" name="nombre" />
-    <input type="submit" value="Guardar">
+<form class="form-inline" action="/colors" method="post" role="form">
+  <div class="form-group">
+    <input class="form-control" type="text" name="nombre" >
+  </div>
+  <input class="btn btn-success" type="submit" value="Nuevo">
 </form>
 
-<ul>
-<% if @colors.any? %>
-  <% @colors.each do |color| %>
-    <li><%= color.nombre %>
-  <a href="/colors/<%= color.id %>">editar</a>
-</li>
+<h2><%= p @title %></h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Color</th>
+      <th>Acciones</th>
+    </tr>
+    <% if @colors.any? %>
+      <% @colors.each do |color| %>
+      <tr>
+      <td>
+        <%= color.id %>
+      </td>
+      <td>
+        <%= color.nombre %>
+      </td>
+      <td>
+        <div class="btn-group">
+          <a class="btn btn-info" href="/colors/<%= color.id %>">Editar</a>
+          <a class="btn btn-danger" href="/colors/<%= color.id %>/delete">Eliminar</a>
+        </div>
+      </td>
+    </tr>
   <% end %>
-<% end %>
-</ul>
+  <% end %>
+  </table>
+</div>
 

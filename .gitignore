@@ -220,6 +220,7 @@ pip-log.txt
 Session.vim
 .netrwhist
 *~
+*.db
 
 #### Ruby ###
 *.gem
@@ -235,7 +236,7 @@ spec/reports
 test/tmp
 test/version_tmp
 tmp
-*.db
+development.db
 
 # YARD artifacts
 .yardoc

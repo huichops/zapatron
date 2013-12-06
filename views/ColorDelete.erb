@@ -1,9 +1,9 @@
 <% if @color %>
   <p>Quieres eliminar el color <strong><%= @color.nombre %></strong>?</p>
-  <form action="/colors/<%= @color.id %>" method="post">
+  <form class="form-inline" action="/colors/<%= @color.id %>" method="post" role="form">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value="Si, a la verga">
-    <a href="/<%= @color.id %>">Mejor no</a>
+    <input class="btn btn-danger" type="submit" value="Si, a la verga">
+    <a class="btn btn-default" href="/colors/">Mejor no</a>
   </form>
 <% else %>
   <p>No existe el color</p>

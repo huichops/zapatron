@@ -3,6 +3,7 @@ require './controllers/AppController'
 class ColorController < AppController
   get '/' do
     @colors = Color.all :order => :id.desc
+    @title = 'Colores'
     erb :ColorIndex
   end
 
@@ -15,6 +16,7 @@ class ColorController < AppController
 
   get '/:id' do
     @color = Color.get params[:id]
+    @title = 'Editar Color'
     erb :ColorEdit
   end
 
@@ -27,6 +29,7 @@ class ColorController < AppController
 
   get '/:id/delete' do
     @color = Color.get params[:id]
+  @title = 'Eliminar Color'
     erb :ColorDelete
   end
 
