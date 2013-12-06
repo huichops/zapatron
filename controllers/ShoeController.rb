@@ -4,12 +4,12 @@ class ShoeController < AppController
   get '/' do
     @shoes = Shoe.all :order => :id.desc
     @title = 'Zapatos'
-    erb :clients
+    erb :ShoeIndex
   end
 
   post '/' do
     s = Shoe.new
-    s.model = params[:model]
+    s.model = params[:modelo]
     s.save
 	redirect '/shoes'
   end
@@ -21,9 +21,9 @@ get '/:id' do
     erb :ShoeEdit
   end
 
-  put '/:id' do
+ put '/:id' do
     s = Shoe.get params[:id]
-    s.nombre = params[:nombre]
+    s.modelo = params[:modelo]
     s.save
     redirect '/shoes'
   end
