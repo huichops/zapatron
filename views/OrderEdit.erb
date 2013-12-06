@@ -1,10 +1,12 @@
 <% if @order %>
-        <form action = "/orders/<%= @order.id %>" method = "post">
+          <form class="form-inline" action="/orders/<%= @color.id %>" method="post" role="form">
         <input type="hidden" name="_method" value="put">
-        <input type="text" name="nombre" value="<%= @order.nombre %>">
-        <input type="submit" value="Guardar">
-  </form>
-    <a href="/colors/<%= @order.id %>/delete">Eliminar</a>
-<% else %>
-        <p>Orden inexistente</p>
+        <div class="form-group">
+            <input class="form-control" type="text" name="nombre" value="<%= @order.nombre %>">
+        </div>
+        <input class="btn btn-success" type="submit" value="Guardar">
+        <a class="btn btn-danger" href="/orders/<%= @color.id %>/delete">Eliminar</a>
+      </form>
+  <% else %>
+            <p><strong>No existe el Pedido</strong></p>
 <% end %>

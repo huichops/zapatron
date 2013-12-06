@@ -1,8 +1,37 @@
-<form action = "/orders" method = "post">
-    <input id = "nombre" type = "text"  name = "text" />
-</form>
-<ul>
-    <%  @orders.each do |order| %>
-        <li><%= order.nombre %></li>
-    <% end %>
-</ul>
+<form class="form-inline" action="/orders" method="post" role="form">
+      <div class="form-group">
+        <input class="form-control" type="text" name="nombre" >
+      </div>
+      <input class="btn btn-success" type="submit" value="Nuevo">
+  </form>
+
+  <h2><%= p @title %></h2>
+  <div class="table-responsive">
+        <table class="table table-striped">
+          <tr>
+            <th>ID</th>
+            <th>order</th>
+            <th>Acciones</th>
+          </tr>
+          <% if @orders.any? %>
+                <% @orders.each do |color| %>
+                <tr>
+            <td>
+              <%= order.id %>
+            </td>
+            <td>
+              <%= order.nombre %>
+            </td>
+            <td>
+              <div class="btn-group">
+                <a class="btn btn-info" href="/orders/<%= color.id %>">Editar</a>
+                <a class="btn btn-danger" href="/orders/<%= color.id %>/delete">Eliminar</a>
+              </div>
+            </td>
+          </tr>
+        <% end %>
+        <% end %>
+        </table>
+    </div>
+
+
