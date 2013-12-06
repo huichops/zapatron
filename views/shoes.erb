@@ -1,0 +1,9 @@
+<section>
+  <form action="/shoes" method="post">
+    <input id="model" type="text" name="model">
+    <input type="submit" value="Guardar">
+  </form>
+  <% @shoes.each do |shoe| %>
+    <p><%= shoe.modelo %></p>
+  <% end %>
+</section>
