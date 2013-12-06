@@ -1,0 +1,35 @@
+<form class="form-inline" action="/shoes" method="post" role="form">
+  <div class="form-group">
+    <input class="form-control" type="text" name="model" >
+  </div>
+  <input class="btn btn-success" type="submit" value="Nuevo">
+</form>
+
+<h2><%= p @title %></h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Modelo</th>
+      <th>Acciones</th>
+    </tr>
+    <% if @shoes.any? %>
+      <% @shoes.each do |shoe| %>
+      <tr>
+      <td>
+        <%= shoe.id %>
+      </td>
+      <td>
+        <%= shoe.modelo %>
+      </td>
+      <td>
+        <div class="btn-group">
+          <a class="btn btn-info" href="/shoes/<%= shoe.id %>">Editar</a>
+          <a class="btn btn-danger" href="/shoes/<%= shoe.id %>/delete">Eliminar</a>
+        </div>
+      </td>
+    </tr>
+  <% end %>
+  <% end %>
+  </table>
+</div>
