@@ -7,5 +7,9 @@ class Order
     property :id, Serial
     property :nombre, String
     property :fecha, Date
+    property :fechaEntrega, Date
+
+    # has_n, :batches
+
     DataMapper.finalize
 end

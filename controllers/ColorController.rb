@@ -29,7 +29,7 @@ class ColorController < AppController
 
   get '/:id/delete' do
     @color = Color.get params[:id]
-  @title = 'Eliminar Color'
+    @title = 'Eliminar Color'
     erb :ColorDelete
   end
 

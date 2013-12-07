@@ -1,37 +1,52 @@
 <form class="form-inline" action="/orders" method="post" role="form">
-      <div class="form-group">
+    <div class="form-group">
         <input class="form-control" type="text" name="nombre" >
-      </div>
-      <input class="btn btn-success" type="submit" value="Nuevo">
-  </form>
+    </div>
+    <input class="btn btn-success" type="submit" value="Nuevo">
+</form>
 
-  <h2><%= p @title %></h2>
-  <div class="table-responsive">
+<h2><%= p @title %></h2>
+<div class="row">
+<div class="col-md-6">
+    <div class="table-responsive">
         <table class="table table-striped">
-          <tr>
-            <th>ID</th>
-            <th>order</th>
-            <th>Acciones</th>
-          </tr>
-          <% if @orders.any? %>
-                <% @orders.each do |color| %>
-                <tr>
-            <td>
-              <%= order.id %>
-            </td>
-            <td>
-              <%= order.nombre %>
-            </td>
-            <td>
-              <div class="btn-group">
-                <a class="btn btn-info" href="/orders/<%= color.id %>">Editar</a>
-                <a class="btn btn-danger" href="/orders/<%= color.id %>/delete">Eliminar</a>
-              </div>
-            </td>
-          </tr>
-        <% end %>
-        <% end %>
+            <tr>
+                <th>ID</th>
+                <th>order</th>
+                <th>fecha creacion</th>
+                <th>fecha entrega</th>
+                <th>Acciones</th>
+            </tr>
+            <% if @orders.any? %>
+                <% @orders.each do |order| %>
+                    <tr>
+                        <td>
+                            <%= order.id %>
+                        </td>
+                        <td>
+                            <%= order.nombre %>
+                        </td>
+                        <td>
+                            <%= order.fecha %>
+                        </td>
+                        <td>
+                              <%= order.fechaEntrega %>
+                            </td>
+                        <td>
+                            <div class="btn-group">
+                                <a class="btn btn-info" href="/orders/<%= order.id %>">Editar</a>
+                                <a class="btn btn-danger" href="/orders/<%= order.id %>/delete">Eliminar</a>
+                            </div>
+                        </td>
+                    </tr>
+                <% end %>
+            <% end %>
         </table>
     </div>
+</div>
+<div class="col-md-6">
+
+</div>
+</div>
 
 
