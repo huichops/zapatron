@@ -1,3 +1,4 @@
+<h2><%= p @title %></h2>
 <% if @shoe %>
   <form class="form-inline" action="/shoes/<%= @shoe.id %>" method="post" role="form">
     <input type="hidden" name="_method" value="put">

@@ -1,3 +1,4 @@
+<h2><%= p @title %></h2>
 <% if @shoe %>
   <p>Quieres eliminar el modelo <strong><%= @shoe.modelo %></strong>?</p>
   <form class="form-inline" action="/shoes/<%= @shoe.id %>" method="post" role="form">

@@ -11,7 +11,8 @@
     <tr>
       <th>ID</th>
       <th>Modelo</th>
-      <th>Acciones</th>
+     <th>Colores</th> 
+
     </tr>
     <% if @shoes.any? %>
       <% @shoes.each do |shoe| %>
@@ -22,6 +23,11 @@
       <td>
         <%= shoe.modelo %>
       </td>
+
+        <td>
+        <% # colores %>
+      </td>
+
       <td>
         <div class="btn-group">
           <a class="btn btn-info" href="/shoes/<%= shoe.id %>">Editar</a>
