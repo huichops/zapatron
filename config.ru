@@ -20,5 +20,5 @@ map('/batches') { run BatchController }
 
 DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/development.db")
 DataMapper.finalize
-#DataMapper.auto_migrate!  
-DataMapper.auto_upgrade!
+DataMapper.auto_migrate!
+

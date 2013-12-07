@@ -14,7 +14,10 @@ class BatchController < AppController
 
   post '/' do
     b = Batch.new
-    b.shoeModel = params[:shoeModel]
+    b.shoeModel = params[:shoe]
+    b.numeration = params[:numeration]
+    b.color = params[:color]
+    b.shoePairs = params[:shoePairs]
     b.save
     redirect '/batches'
   end
