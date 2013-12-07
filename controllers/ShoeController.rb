@@ -34,7 +34,7 @@ class ShoeController < AppController
   end
 
   delete '/:id' do
-    s = Color.get params[:id]
+    s = Shoe.get params[:id]
     s.destroy
     redirect '/shoes'
   end
