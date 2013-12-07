@@ -10,5 +10,4 @@ class Batch
 	property :shoePairs, Integer
 	#belongs_to :order
 	#has n, :shoes, :through => Resource
-	DataMapper.finalize	
 end

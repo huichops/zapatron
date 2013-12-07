@@ -3,6 +3,27 @@
         <input class="form-control" type="text" name="nombre" >
     </div>
     <input class="btn btn-success" type="submit" value="Nuevo">
+    <select name="selectShoes">
+    <% if @shoes.any? %>
+	<% @shoes.each do |shoe| %>
+		  <option value="<%= shoe.id %>"><%= shoe.modelo %></option>
+	<% end %>
+    <% else %>
+            <option value="-1">No hay zapatos</option>
+    <% end %>
+    </select>
+	
+    <select name="selectColors">
+    <% if @colors.any? %>
+	<% @colors.each do |color| %>
+		  <option value="<%= color.id %>"><%= color.nombre %></option>
+	<% end %>
+    <% else %>
+            <option value="-1">No hay colores</option>
+    <% end %>
+    </select>
+
+
 </form>
 
 <h2><%= p @title %></h2>

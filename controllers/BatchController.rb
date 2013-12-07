@@ -4,6 +4,10 @@ class BatchController < AppController
 
   get '/' do
     @batches = Batch.all :order => :id.desc
+# query zapatos y de colores y pedidos
+    @shoes = Shoe.all :order => :id.desc
+    @colors = Color.all :order => :id.desc
+#    @orders = Order.all :order => :id.desc	
     @title = 'Lotes'
     erb :BatchesIndex
   end
