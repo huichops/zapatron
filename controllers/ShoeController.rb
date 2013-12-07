@@ -13,15 +13,14 @@ class ShoeController < AppController
     s.save
 	redirect '/shoes'
   end
-end
 
-get '/:id' do
+  get '/:id' do
     @shoe = Shoe.get params[:id]
     @title = 'Editar Modelo'
     erb :ShoeEdit
   end
 
- put '/:id' do
+  put '/:id' do
     s = Shoe.get params[:id]
     s.modelo = params[:modelo]
     s.save
