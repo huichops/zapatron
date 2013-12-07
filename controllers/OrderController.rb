@@ -4,7 +4,7 @@ class OrderController <AppController
     get '/' do
         @orders = Order.all :order=> :id.desc
         @title = 'Pedido'
-        erb :OrdersIndex
+        erb :OrderIndex
     end
 
     post '/' do
