@@ -1,0 +1,13 @@
+<h2><%= p @title %></h2>
+<% if @shoe %>
+  <form class="form-inline" action="/shoes/<%= @shoe.id %>" method="post" role="form">
+    <input type="hidden" name="_method" value="put">
+    <div class="form-group">
+        <input class="form-control" type="text" name="modelo" value="<%= @shoe.modelo %>">
+    </div>
+    <input class="btn btn-success" type="submit" value="Guardar">
+    <a class="btn btn-danger" href="/shoes/<%= @shoe.id %>/delete">Eliminar</a>
+  </form>
+<% else %>
+  <p><strong>No existe el Modelo!</strong></p>
+<% end %>

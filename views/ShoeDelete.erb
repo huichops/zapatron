@@ -1,0 +1,11 @@
+<h2><%= p @title %></h2>
+<% if @shoe %>
+  <p>Quieres eliminar el modelo <strong><%= @shoe.modelo %></strong>?</p>
+  <form class="form-inline" action="/shoes/<%= @shoe.id %>" method="post" role="form">
+    <input type="hidden" name="_method" value="delete">
+    <input class="btn btn-danger" type="submit" value="Si, a la verga">
+    <a class="btn btn-default" href="/shoes/">Mejor no</a>
+  </form>
+<% else %>
+  <p>No existe el modelo</p>
+<% end %>
