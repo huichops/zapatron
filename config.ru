@@ -14,6 +14,7 @@ DataMapper.auto_upgrade!
 map('/') { run WebController }
 map('/clientes') { run ClientController }
 map('/colors') { run ColorController }
+map('/shoes') { run ShoeController }
 map('/orders') { run OrderController }
 #map('/batches') { run BatchController }
 

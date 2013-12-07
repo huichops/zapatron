@@ -9,7 +9,7 @@ class ShoeController < AppController
 
   post '/' do
     s = Shoe.new
-    s.model = params[:modelo]
+    s.modelo = params[:modelo]
     s.save
 	redirect '/shoes'
   end
