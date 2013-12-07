@@ -7,6 +7,7 @@ class BatchController < AppController
 # query zapatos y de colores y pedidos
     @shoes = Shoe.all :order => :id.desc
     @colors = Color.all :order => :id.desc
+    @orders = Order.all :order => :id.desc
 #    @orders = Order.all :order => :id.desc	
     @title = 'Lotes'
     erb :BatchesIndex
@@ -18,18 +19,23 @@ class BatchController < AppController
     b.numeration = params[:numeration]
     b.color = params[:color]
     b.shoePairs = params[:shoePairs]
+    b.order_id = params[:order]
     b.save
     redirect '/batches'
   end
 
   get '/:id' do
     @batch = Batch.get params[:id]
+    @order = Order.get @batch.order_id
     erb :BatchEdit
   end
 
   put '/:id' do
     b = Batch.get params[:id]
-    b.shoeModel = params[:shoeModel]
+    b.shoeModel = params[:shoe]
+    b.numeration = params[:numeration]
+    b.color = params[:color]
+    b.shoePairs = params[:shoePairs]
     b.save
     redirect '/batches'
   end

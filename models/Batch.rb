@@ -8,6 +8,6 @@ class Batch
 	property :color, String
 	property :shoeModel, String
 	property :shoePairs, Integer
-	# belongs_to :order
+	belongs_to :order
 	#has n, :shoes, :through => Resource
 end

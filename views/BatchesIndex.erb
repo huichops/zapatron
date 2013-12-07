@@ -13,6 +13,16 @@
     <% end %>
     </select>
 	
+    <select name="order">
+    <% if @orders.any? %>
+	<% @orders.each do |order| %>
+		  <option value="<%= order.id %>"><%= order.nombre %></option>
+	<% end %>
+    <% else %>
+            <option value="-1">No hay orderes</option>
+    <% end %>
+    </select>
+
     <select name="color">
     <% if @colors.any? %>
 	<% @colors.each do |color| %>
@@ -35,6 +45,7 @@
             <th>Modelo</th>
             <th>Color</th>
             <th>Numeracion</th>
+            <th>Pares</th>
             <th>Acciones</th>
         </tr>
         <% if @batches.any? %>
@@ -51,6 +62,9 @@
                     </td>
                     <td>
                         <%= batch.numeration %>
+                    </td>
+                    <td>
+                        <%= batch.shoePairs %>
                     </td>
                     <td>
                         <div class="btn-group">

@@ -9,6 +9,6 @@ class Order
     property :nombre, String
     property :fecha, Date
     property :fechaEntrega, Date
-    # has n, :batches
+    has n, :batches
 end
 
