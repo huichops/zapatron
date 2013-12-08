@@ -10,11 +10,27 @@ class OrderController < AppController
 
   post '/' do
     o = Order.new
+    b = Batch.new
+    lastOrder = Order.last :order => :id.desc
+
     o.nombre = params[:nombre]
     o.fecha = Time.now
     o.fechaEntrega = Time.now
     o.save
+
+    b.shoeModel = params[:shoe]
+    b.numeration = params[:numeration]
+    b.color = params[:color]
+    b.shoePairs = params[:shoePairs]
+    b.order_id = lastOrder.id 
+    b.save
     redirect '/orders'
+  end
+
+  get '/add' do
+    @shoes = Shoe.all :order => :id.desc
+    @colors = Color.all :order => :id.desc
+    erb :OrderAdd
   end
 
   get '/:id' do
