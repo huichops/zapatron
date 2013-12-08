@@ -1,10 +1,10 @@
 <% if @batch %>
-    <p>deseas eliminar el pedido <strong><%= @batch.id %></strong>?</p>
-    <form action = "/batches/<%= @batch.id %>" method = "post">
-        <input type = "hidden" name = "_method" value = "delete">
-        <input type = "submit" value = "Si, a la vega">
-        <a href = "/batches">"Dice mi mama que siempre no lote"</a>
-    </form>
+  <p>deseas eliminar el pedido <strong><%= @batch.id %></strong>?</p>
+  <form action = "/batches/<%= @batch.id %>" method = "post">
+  <input type = "hidden" name = "_method" value = "delete">
+  <input class="btn btn-danger" type="submit" value="Eliminar">
+  <a class="btn btn-default" href="/colors/">Mejor no</a>
+</form>
 <% else %>
-    <p>No existe el pedido no inventes</p>
+  <p>No existe el pedido no inventes</p>
 <% end %>

@@ -2,7 +2,7 @@
   <p>Quieres eliminar el color <strong><%= @color.nombre %></strong>?</p>
   <form class="form-inline" action="/colors/<%= @color.id %>" method="post" role="form">
     <input type="hidden" name="_method" value="delete">
-    <input class="btn btn-danger" type="submit" value="Si, a la verga">
+    <input class="btn btn-danger" type="submit" value="Eliminar">
     <a class="btn btn-default" href="/colors/">Mejor no</a>
   </form>
 <% else %>

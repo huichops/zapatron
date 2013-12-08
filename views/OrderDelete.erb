@@ -1,10 +1,10 @@
 <% if @order %>
-    <p>deseas eliminar el pedido <strong><%= @order.nombre %></strong>?</p>
-    <form action = "/orders/<%= @order.id %>" method = "post">
-        <input type = "hidden" name = "_method" value = "delete">
-        <input type = "submit" value = "Si, a la vega">
-        <a href = "/orders">"Dice mi mama que siempre no"</a>
-    </form>
+  <p>deseas eliminar el pedido con fecha <strong><%= @order.fechaEntrega %></strong>?</p>
+<form action = "/orders/<%= @order.id %>" method = "post">
+  <input type = "hidden" name = "_method" value = "delete">
+  <input class="btn btn-danger" type="submit" value="Eliminar">
+  <a class="btn btn-default" href="/colors/">Mejor no</a>
+</form>
 <% else %>
-    <p>No existe el pedido no inventes</p>
+  <p>No existe el pedido no inventes</p>
 <% end %>
