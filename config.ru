@@ -19,6 +19,6 @@ map('/batches') { run BatchController }
 
 
 # DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/development.db")
-DataMapper::setup(:default, "postgres://localhost/zapatron")
+DataMapper::setup(:default, ENV['DATABASE_URL'] || 'postgres://localhost/zapatron')
 DataMapper.finalize.auto_upgrade!
 
