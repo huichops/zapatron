@@ -18,7 +18,7 @@ map('/orders') { run OrderController }
 map('/batches') { run BatchController }
 
 
-DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/development.db")
-DataMapper.finalize
-DataMapper.auto_migrate!
+# DataMapper::setup(:default, "sqlite3://#{Dir.pwd}/development.db")
+DataMapper::setup(:default, "postgres://localhost/zapatron")
+DataMapper.finalize.auto_upgrade!
 
