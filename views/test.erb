@@ -1,3 +1,8 @@
+<% if @out %>
+  <div class="alert alert-info">
+    <%= @out %>
+</div>
+<% end %>
 <% if @order %>
   <form class="form-horizontal" action="/orders/<%= @order.id %>" method="post" role="form">
   <input type="hidden" name="_method" value="put">

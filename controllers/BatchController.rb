@@ -18,7 +18,11 @@ class BatchController < AppController
     b.color = params[:color]
     b.shoePairs = params[:shoePairs]
     b.order_id = params[:order]
-    b.save
+    if b.save
+      @out = 'Guardado con exito'
+    else
+      @out = 'Error al guardar'
+    end
     redirect '/batches'
   end
 
@@ -29,7 +33,11 @@ class BatchController < AppController
     b.color = params[:color]
     b.shoePairs = params[:shoePairs]
     b.order_id = params[:order]
-    b.save
+    if b.save
+      @out = 'Guardado con exito'
+    else
+      @out = 'Error al guardar'
+    end
     redirect "/#{params[:order]}"
   end
 
@@ -40,7 +48,11 @@ class BatchController < AppController
     b.color = params[:color]
     b.shoePairs = params[:shoePairs]
     b.order_id = params[:order]
-    b.save
+    if b.save
+      @out = 'Guardado con exito'
+    else
+      @out = 'Error al guardar'
+    end
     redirect "/orders/#{params[:order]}"
   end
 
@@ -56,7 +68,11 @@ class BatchController < AppController
     b.numeration = params[:numeration]
     b.color = params[:color]
     b.shoePairs = params[:shoePairs]
-    b.save
+    if b.save
+      @out = 'Guardado con exito'
+    else
+      @out = 'Error al guardar'
+    end
     redirect '/batches'
   end
 

@@ -1,3 +1,8 @@
+<% if @out %>
+  <div class="alert alert-info">
+    <%= @out %>
+</div>
+<% end %>
 <button class="btn btn-success" data-toggle="collapse" data-target="#demo">Nuevo Lote</button>
 <div id="demo" class="collapse">
   <form class="form-horizontal" action="/batches" method="post" role="form">
