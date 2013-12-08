@@ -1,6 +1,6 @@
 <% if @out %>
   <div class="alert alert-info">
-    <%= @out %>
+  <%= @out %>
 </div>
 <% end %>
 <% if @order %>
@@ -9,12 +9,12 @@
   <div class="form-group">
     <label class="col-sm-2 control-label" for="fechaEntrega">Fecha de Entrega</label>
     <div class="col-sm-4">
-        <input class="form-control" type="date" name="fechaEntrega" value="<%= @order.fechaEntrega %>" placeholder="dd/mm/aaaa"/>
+      <input class="form-control" type="date" name="fechaEntrega" value="<%= @order.fechaEntrega %>" placeholder="AAAA-MM-DD"/>
     </div>
-  <div class="col-sm-4">
-    <input class="btn btn-primary" type="submit" value="Guardar">
-    <a class="btn btn-danger" href="/orders/<%= @order.id %>/delete">Eliminar</a>
-  </div>
+    <div class="col-sm-4">
+      <input class="btn btn-primary" type="submit" value="Guardar">
+      <a class="btn btn-danger" href="/orders/<%= @order.id %>/delete">Eliminar</a>
+    </div>
   </div>
 </form>
 <br>
