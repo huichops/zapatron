@@ -1,18 +1,39 @@
 <% if @out %>
   <div class="alert alert-info">
-    <%= @out %>
+  <%= @out %>
 </div>
 <% end %>
 <% if @batch %>
-<form class="form-horizontal" action="/batches/<%= @batch.id %>" method="post" role="form">
+  <form class="form-horizontal" action="/batches/<%= @batch.id %>" method="post" role="form">
   <div class="row">
     <div class="col-md-2 ">
-
-      <div class=" form-group">
-        <label for="Color">Color</label>
-        <input class="form-control" type="text" name="color" value="<%= @batch.color %>" >
+      <div class="form-group">
         <label for="shoe">Modelo</label>
-        <input class="form-control" type="text" name="shoe" value="<%= @batch.shoeModel %>" >
+        <select name="shoe">
+          <% if @shoes.any? %>
+            <% @shoes.each do |shoe| %>
+          <option value="<%= shoe.modelo %>"<%= p 'selected' if @batch.shoeModel == shoe.modelo %>><%= shoe.modelo %></option>
+        <% end %>
+        <% else %>
+            <option value="vacio">No hay zapatos</option>
+        <% end %>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="color">Color</label>
+        <select name="color">
+          <% if @colors.any? %>
+            <% @colors.each do |color| %>
+          <option value="<%= color.nombre %>" <%= p 'selected' if @batch.color == color.nombre %>><%= color.nombre %></option>
+        <% end %>
+        <% else %>
+            <option value="vacio">No hay colores</option>
+        <% end %>
+        </select>
+      </div>
+
+      <div class="form-group">
         <label for="order">Pedido</label>
         <input disabled class="form-control" type="text" name="order" value="<%= @order.fechaEntrega %>" >
       </div>
@@ -25,11 +46,11 @@
         <input class="form-control" type="text" name="numeration" value="<%= @batch.numeration %>" >
         <input type="hidden" name="_method" value="put">
       </div>
-  <div class="row">
-    <div class="col-md-offset-10">
-        <input class="btn btn-success" type="submit" value="Guardar">
-    </div>
-  </div>
+      <div class="row">
+        <div class="col-md-offset-10">
+          <input class="btn btn-success" type="submit" value="Guardar">
+        </div>
+      </div>
     </div>
   </div>
 

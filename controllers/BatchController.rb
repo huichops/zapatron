@@ -59,6 +59,8 @@ class BatchController < AppController
   get '/:id' do
     @batch = Batch.get params[:id]
     @order = Order.get @batch.order_id
+    @shoes = Shoe.all :order => :id.desc
+    @colors = Color.all :order => :id.desc
     erb :BatchEdit
   end
 

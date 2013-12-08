@@ -2,9 +2,10 @@ require './controllers/AppController'
 
 class OrderController < AppController
   get '/' do
-    @orders = Order.all :order=> :id.desc
-    @title = 'Pedido'
-    erb :OrderIndex
+    # @orders = Order.all :order=> :id.desc
+    # @title = 'Pedido'
+    # erb :OrderIndex
+    redirect '/'
   end
 
   post '/' do
@@ -63,6 +64,13 @@ class OrderController < AppController
 
   delete '/:id' do
     o = Order.get params[:id]
+    b = Batch.all(:order_id => o.id)
+    if b
+      b.each do |bb|
+        bb.destroy
+      end
+    end
+
     o.destroy
     redirect '/orders'
   end
