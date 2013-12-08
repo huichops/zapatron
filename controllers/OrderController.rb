@@ -1,4 +1,5 @@
 require './controllers/AppController'
+require 'json'
 
 class OrderController < AppController
   get '/' do

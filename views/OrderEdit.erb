@@ -1,12 +1,51 @@
 <% if @order %>
-          <form class="form-inline" action="/orders/<%= @order.id %>" method="post" role="form">
+    <form class="form-inline" action="/orders/<%= @order.id %>" method="post" role="form">
         <input type="hidden" name="_method" value="put">
         <div class="form-group">
             <input class="form-control" type="text" name="nombre" value="<%= @order.nombre %>">
         </div>
         <input class="btn btn-success" type="submit" value="Guardar">
         <a class="btn btn-danger" href="/orders/<%= @order.id %>/delete">Eliminar</a>
-      </form>
-  <% else %>
-            <p><strong>No existe el Pedido</strong></p>
+    </form>
+    <div class="table-responsive">
+        <table class="table table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Modelo</th>
+                <th>Color</th>
+                <th>Numeracion</th>
+                <th>Pares</th>
+                <th>Acciones</th>
+            </tr>
+            <% if @order.batches.any? %>
+                <% @order.batches.each do |batch| %>
+                    <tr>
+                        <td>
+                            <%= batch.id %>
+                        </td>
+                        <td>
+                            <%= batch.shoeModel %>
+                        </td>
+                        <td>
+                            <%= batch.color %>
+                        </td>
+                        <td>
+                            <%= batch.numeration %>
+                        </td>
+                        <td>
+                            <%= batch.shoePairs %>
+                        </td>
+                        <td>
+                            <div class="btn-group">
+                                <a class="btn btn-info" href="/batches/<%= batch.id %>">Editar</a>
+                                <a class="btn btn-danger" href="/batches/<%= batch.id %>/delete">Eliminar</a>
+                            </div>
+                        </td>
+                    </tr>
+                <% end %>
+            <% end %>
+        </table>
+    </div>
+<% else %>
+    <p><strong>No existe el Pedido</strong></p>
 <% end %>
