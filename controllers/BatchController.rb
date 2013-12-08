@@ -22,6 +22,17 @@ class BatchController < AppController
     redirect '/batches'
   end
 
+  post '/index' do
+    b = Batch.new
+    b.shoeModel = params[:shoe]
+    b.numeration = params[:numeration]
+    b.color = params[:color]
+    b.shoePairs = params[:shoePairs]
+    b.order_id = params[:order]
+    b.save
+    redirect "/#{params[:order]}"
+  end
+
   post '/pedido' do
     b = Batch.new
     b.shoeModel = params[:shoe]
