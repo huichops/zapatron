@@ -16,6 +16,15 @@ class OrderController < AppController
     redirect '/orders'
   end
 
+  post '/index' do
+    o = Order.new
+    o.nombre = params[:nombre]
+    o.fecha = Time.now
+    o.fechaEntrega = Time.now
+    o.save
+    redirect '/'
+  end
+
   get '/add' do
     @shoes = Shoe.all :order => :id.desc
     @colors = Color.all :order => :id.desc

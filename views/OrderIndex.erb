@@ -1,9 +1,13 @@
+<button class="btn btn-success" data-toggle="collapse" data-target="#demo">Nuevo Lote</button>
+<div id="demo" class="collapse">
 <form class="form-inline" action="/orders" method="post" role="form">
   <div class="form-group">
     <input class="form-control" type="text" name="nombre" >
   </div>
-  <input class="btn btn-success" type="submit" value="Nuevo">
+  <br>
+  <input class="btn btn-primary" type="submit" value="Nuevo">
 </form>
+</div>
 
 <h2><%= p @title %></h2>
 <div class="table-responsive">
