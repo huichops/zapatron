@@ -9,18 +9,17 @@ class OrderController < AppController
 
   post '/' do
     o = Order.new
-    o.nombre = params[:nombre]
+    o.fechaEntrega = Time.parse params[:fechaEntrega]
     o.fecha = Time.now
-    o.fechaEntrega = Time.now
     o.save
     redirect '/orders'
   end
 
   post '/index' do
     o = Order.new
-    o.nombre = params[:nombre]
+    p params[:fechaEntrega]
+    o.fechaEntrega = Date._strptime(params[:fechaEntrega], '%Y-%m-%d')
     o.fecha = Time.now
-    o.fechaEntrega = Time.now
     o.save
     redirect '/'
   end
@@ -40,9 +39,7 @@ class OrderController < AppController
 
   put '/:id'do
     o = Order.get params[:id]
-    o.nombre = params[:nombre]
-    o.fecha = Time.now
-    o.fechaEntrega = Time.now
+    o.fechaEntrega = Date._strptime(params[:fechaEntrega], '%Y-%m-%d')
     o.save
     redirect '/orders'
   end

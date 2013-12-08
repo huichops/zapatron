@@ -20,7 +20,7 @@
         <select name="order">
           <% if @orders.any? %>
             <% @orders.each do |order| %>
-            <option value="<%= order.id %>"><%= order.nombre %></option>
+            <option value="<%= order.id %>"><%= order.fechaEntrega %></option>
         <% end %>
         <% else %>
             <option value="vacio">No hay pedidos</option>

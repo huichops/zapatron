@@ -1,11 +1,16 @@
 <% if @order %>
-  <form class="form-inline" action="/orders/<%= @order.id %>" method="post" role="form">
+  <form class="form-horizontal" action="/orders/<%= @order.id %>" method="post" role="form">
   <input type="hidden" name="_method" value="put">
   <div class="form-group">
-    <input class="form-control" type="text" name="nombre" value="<%= @order.nombre %>">
+    <label class="col-sm-2 control-label" for="fechaEntrega">Fecha de Entrega</label>
+    <div class="col-sm-4">
+        <input class="form-control" type="date" name="fechaEntrega" value="<%= @order.fechaEntrega %>" placeholder="dd/mm/aaaa"/>
+    </div>
+  <div class="col-sm-4">
+    <input class="btn btn-primary" type="submit" value="Guardar">
+    <a class="btn btn-danger" href="/orders/<%= @order.id %>/delete">Eliminar</a>
   </div>
-  <input class="btn btn-primary" type="submit" value="Guardar">
-  <a class="btn btn-danger" href="/orders/<%= @order.id %>/delete">Eliminar</a>
+  </div>
 </form>
 <br>
 
