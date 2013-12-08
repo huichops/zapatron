@@ -1,53 +1,53 @@
 <button class="btn btn-success" data-toggle="collapse" data-target="#demo">Nuevo Lote</button>
 <div id="demo" class="collapse">
-<form class="form-horizontal" action="/batches" method="post" role="form">
-  <div class="form-group">
-    <label class="col-sm-2 control-label" for="shoePairs">Pares</label>
-    <div class="col-sm-2">
-      <input class="form-control" type="text" name="shoePairs" >
-    </div>
-    <div class="col-sm-8">
-      <select name="shoe">
-        <% if @shoes.any? %>
-          <% @shoes.each do |shoe| %>
-        <option value="<%= shoe.modelo %>"><%= shoe.modelo %></option>
-      <% end %>
-      <% else %>
-          <option value="vacio">No hay zapatos</option>
-      <% end %>
-      </select>
+  <form class="form-horizontal" action="/batches" method="post" role="form">
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="shoePairs">Pares</label>
+      <div class="col-sm-2">
+        <input class="form-control" type="text" name="shoePairs" >
+      </div>
+      <div class="col-sm-8">
+        <select name="shoe">
+          <% if @shoes.any? %>
+            <% @shoes.each do |shoe| %>
+            <option value="<%= shoe.modelo %>"><%= shoe.modelo %></option>
+        <% end %>
+        <% else %>
+            <option value="vacio">No hay zapatos</option>
+        <% end %>
+        </select>
 
-      <select name="order">
-        <% if @orders.any? %>
-          <% @orders.each do |order| %>
-        <option value="<%= order.id %>"><%= order.nombre %></option>
-      <% end %>
-      <% else %>
-          <option value="vacio">No hay pedidos</option>
-      <% end %>
-      </select>
+        <select name="order">
+          <% if @orders.any? %>
+            <% @orders.each do |order| %>
+            <option value="<%= order.id %>"><%= order.nombre %></option>
+        <% end %>
+        <% else %>
+            <option value="vacio">No hay pedidos</option>
+        <% end %>
+        </select>
 
-      <select name="color">
-        <% if @colors.any? %>
-          <% @colors.each do |color| %>
-        <option value="<%= color.nombre %>"><%= color.nombre %></option>
-      <% end %>
-      <% else %>
-          <option value="vacio">No hay colores</option>
-      <% end %>
-      </select>
+        <select name="color">
+          <% if @colors.any? %>
+            <% @colors.each do |color| %>
+            <option value="<%= color.nombre %>"><%= color.nombre %></option>
+        <% end %>
+        <% else %>
+            <option value="vacio">No hay colores</option>
+        <% end %>
+        </select>
+      </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label class="col-sm-2 control-label" for="numeration">Numeracion</label>
-    <div class="col-sm-2">
-      <input class="form-control" type="text" name="numeration" >
-    </div>
-    <div class="col-sm-4">
+    <div class="form-group">
+      <label class="col-sm-2 control-label" for="numeration">Numeracion</label>
+      <div class="col-sm-2">
+        <input class="form-control" type="text" name="numeration" >
+      </div>
+      <div class="col-sm-4">
         <input class="btn btn-success" type="submit" value="Guardar">
+      </div>
     </div>
-  </div>
-</form>
+  </form>
 </div>
 
 <h2><%= p @title %></h2>
