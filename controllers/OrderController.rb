@@ -11,7 +11,11 @@ class OrderController < AppController
     o = Order.new
     o.fechaEntrega = Time.parse params[:fechaEntrega]
     o.fecha = Time.now
-    o.save
+    if o.save
+      @out = 'Guardado con exito'
+    else
+      @out = 'Error al guardar'
+    end
     redirect '/orders'
   end
 
@@ -20,7 +24,11 @@ class OrderController < AppController
     p params[:fechaEntrega]
     o.fechaEntrega = Date._strptime(params[:fechaEntrega], '%Y-%m-%d')
     o.fecha = Time.now
-    o.save
+    if o.save
+      @out = 'Guardado con exito'
+    else
+      @out = 'Error al guardar'
+    end
     redirect '/'
   end
 
@@ -40,7 +48,11 @@ class OrderController < AppController
   put '/:id'do
     o = Order.get params[:id]
     o.fechaEntrega = Date._strptime(params[:fechaEntrega], '%Y-%m-%d')
-    o.save
+    if o.save
+      @out = 'Guardado con exito'
+    else
+      @out = 'Error al guardar'
+    end
     redirect '/orders'
   end
 
