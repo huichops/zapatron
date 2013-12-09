@@ -23,7 +23,7 @@ class OrderController < AppController
   post '/index' do
     o = Order.new
     p params[:fechaEntrega]
-    o.fechaEntrega = Date.strptime(params[:fechaEntrega], '%Y-%d-%m')
+    o.fechaEntrega = Date.strptime(params[:fechaEntrega], '%Y-%m-%d')
     o.fecha = Time.now
     if o.save
       @out = 'Guardado con exito'
@@ -48,7 +48,7 @@ class OrderController < AppController
 
   put '/:id'do
     o = Order.get params[:id]
-    o.fechaEntrega = Date.strptime(params[:fechaEntrega], '%Y-%d-%m')
+    o.fechaEntrega = Date.strptime(params[:fechaEntrega], '%Y-%m-%d')
     if o.save
       @out = 'Guardado con exito'
     else
