@@ -1,5 +1,7 @@
-# VAYANSE A LA VERGA
-#### Shoes Manager 2014
+# Zapatron
+## Shoes Manager 2014
+
+Este proyecto está hecho para controlar los pedidos de calzado de manera muy genérica para que pueda usarse de manera muy flexible. Fue hecho para la clase de Ingeniería de Software.
 
 ##### Instalacion
 
